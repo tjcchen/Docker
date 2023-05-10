@@ -21,11 +21,6 @@ Union FS: Union FS is a filesystem service for Linux, FreeBSD and NetBSD.
 
 6. Easy maintaince and extentions
 
-## Links
-- Documentation: https://docs.docker.com/
-
-- Overview: https://docs.docker.com/get-started/overview/
-
 ## Most-used Commands
 ```bash
 # check current system info
@@ -65,6 +60,27 @@ docker pull centos
 # list all docker images
 docker images
 ```
+
+## Get to Know Docker
+```bash
+# Basic Dockerfile structure
+FROM ubuntu
+ENV MY_SERVICE_PORT=80
+ADD bin/amd64/httpserver /httpserver
+ENTRYPOINT /httpserver
+
+# Transform Dockerfile to a mirror image
+docker build -t tjcchen/httpserver:${tag} . # build
+docker push tjcchen/httpserver:v1.0         # push mirror image to remote
+
+# Run the docker container( in remote container )
+docker run -d tjcchen/httpserver:v1.0
+```
+
+## Links
+- Documentation: https://docs.docker.com/
+
+- Overview: https://docs.docker.com/get-started/overview/
 
 ## License
 MIT
