@@ -4,7 +4,7 @@ On Linux, Docker uses the resource isolation features of the Linux kernel, such 
 ## Concepts
 CGroups: cgroups (abbreviated from control groups) is a Linux kernel feature that limits, accounts for, and isolates the resource usage (CPU, memory, disk I/O, network, etc.) of a collection of processes.
 
-Namespaces: Namespaces are a feature of the Linux kernel that partitions kernel resources such that one set of processes sees one set of resources while another set of processes sees a different set of resources.
+Namespaces: Namespaces are a feature of the Linux kernel that **partitions kernel resources** such that one set of processes sees one set of resources while another set of processes sees a different set of resources.
 
 Union FS: Union FS is a filesystem service for Linux, FreeBSD and NetBSD.
 
@@ -75,6 +75,18 @@ docker push tjcchen/httpserver:v1.0         # push mirror image to remote
 
 # Run the docker container( in remote container )
 docker run -d tjcchen/httpserver:v1.0
+```
+
+## Linux Namespace Commands
+```bash
+# check current namespace
+lsns -t <type> -> eg: lsns -t net # check network namespace
+
+# check process namespace
+ls -la /proc/ <pid> /ns/ -> eg: ls -al /proc/5405/ns
+
+# enter into namespace & run command
+nsenter -t <pid> -n ip addr -> eg: nsenter -t 52418 -n ip addr
 ```
 
 ## Links
