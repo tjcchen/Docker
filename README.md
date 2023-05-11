@@ -82,5 +82,9 @@ docker run -d tjcchen/httpserver:v1.0
 
 - Overview: https://docs.docker.com/get-started/overview/
 
+- Container Standard: https://opencontainers.org/
+
+- Two Major Standards of Open Container Initiative(OCI): Runtime Specification, Image Specification
+
 ## License
 MIT
