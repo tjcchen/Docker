@@ -94,6 +94,8 @@ nsenter -t <pid> -n ip addr -> eg: nsenter -t 52418 -n ip addr
 
 - Overview: https://docs.docker.com/get-started/overview/
 
+- Best Practices for Writing Dockerfiles: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
+
 - Container Standard: https://opencontainers.org/
 
 - Two Major Standards of Open Container Initiative(OCI): Runtime Specification, Image Specification
